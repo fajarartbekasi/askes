@@ -16,7 +16,7 @@
                         <h4 class="fw-bold">Tambah Produk</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('produk.update', $produck->id)}}" method="post" >
+                        <form action="{{route('produk.update', $produck->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row">
@@ -49,10 +49,16 @@
                                         <input type="text" name="description"value="{{$produck->description}}" id="" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Harga</label>
                                         <input type="text" name="price" value="{{$produck->price}}" id="" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Image</label>
+                                        <input type="file" name="image" value="{{$produck->image}}" id="" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-flex">

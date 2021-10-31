@@ -48,7 +48,7 @@ class ProdukController extends Controller
             'price'         => 'required',
         ]);
 
-        $produck->update($request->all());
+        $this->storeImage($produck);
 
         return redirect()->back();
     }

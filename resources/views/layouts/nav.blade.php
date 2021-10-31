@@ -10,18 +10,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav d-flex justify-content-bettwen ">
-                <li class="nav-item text-secondary">
-                    <a href="{{route('categori')}}" class="nav-link">Kategori</a>
-                </li>
-                <li class="nav-item text-secondary">
-                    <a href="{{route('produk')}}" class="nav-link">Produk</a>
-                </li>
-                <li class="nav-item text-secondary">
-                    <a href="{{route('pembelian')}}" class="nav-link">Pembelian</a>
-                </li>
-                <li class="nav-item text-secondary">
-                    <a href="{{route('cart')}}" class="nav-link">Cart</a>
-                </li>
+                @role('admin')
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('categori')}}" class="nav-link">Kategori</a>
+                    </li>
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('produk')}}" class="nav-link">Produk</a>
+                    </li>
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('pembelian')}}" class="nav-link">Pembelian</a>
+                    </li>
+                @endrole
+                @role('user')
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('cart')}}" class="nav-link">Cart</a>
+                    </li>
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('cart')}}" class="nav-link">Invoice</a>
+                    </li>
+                @endrole
             </ul>
 
             <!-- Right Side Of Navbar -->
