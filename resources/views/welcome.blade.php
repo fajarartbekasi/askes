@@ -28,90 +28,14 @@
                                         <div class="col-md-12">
                                             <div class="card-body">
                                                 <div class="row">
+                                                    @foreach($categorys as $category)
                                                     <div class="col-md-4 pt-3 mb-3">
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Microscope</label>
+                                                            <label class="form-check-label" for="inlineCheckbox1">{{$category->name}}</label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Anios</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Delta</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Disposable</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Genesis</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Grifolis</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Hettich</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Dirsch</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Presvac</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Ebara</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Moller Medical</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Onionex</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Sinophram</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Union</label>
-                                                        </div>
-                                                    </div>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>

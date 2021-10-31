@@ -10959,22 +10959,10 @@ a.text-dark:focus {
   color: #335eea;
 }
 
-.card-pill {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 6.25rem;
-}
-
 .jumbotron {
   padding: 10rem 0rem;
   margin-bottom: 2rem;
-  background-size: 80rem;
+  background-size: cover;
   background-image: url(/images/undraw_medicine_b1ol.png?974eb1dcbc4dd9ccce734e0cd29399e5);
   background-repeat: repeat-y;
   background-position: left;
@@ -11017,6 +11005,7 @@ a.text-dark:focus {
 .lift:hover {
   box-shadow: 0 1rem 2.5rem rgba(22, 28, 45, 0.1), 0 0.5rem 1rem -0.75rem rgba(22, 28, 45, 0.1) !important;
   transform: translate3d(0, -3px, 0);
+  text-decoration: none;
 }
 
 * {
@@ -11082,6 +11071,16 @@ a.text-dark:focus {
   color: white;
 }
 
+.cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .slider > a {
   display: inline-flex;
   width: 1.5rem;
@@ -11094,5 +11093,14 @@ a.text-dark:focus {
   border-radius: 50%;
   margin: 0 0 0.5rem 0;
   position: relative;
+}
+
+.btn-card {
+  display: block;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
 }
 

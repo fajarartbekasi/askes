@@ -1,4 +1,3 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -7,73 +6,74 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
 .navbar-laravel {
-  background-color: #fff;
+    background-color: #fff;
 
 }
-.tex-semigray{
-  color: #506690;
+
+.tex-semigray {
+    color: #506690;
 }
+
 .tex-primary {
     color: #335eea;
 }
-.fw-bold{
-  font-weight: 700 !important;
-  color: #335eea;
-}
-.card-pill {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 6.25rem;
+
+.fw-bold {
+    font-weight: 700 !important;
+    color: #335eea;
 }
 
-.jumbotron{
-  padding: 10rem 0rem;
-  margin-bottom: 2rem;
-  background-size: 80rem;
-  background-image: url('img/undraw_medicine_b1ol.png');
-  background-repeat: repeat-y;
-  background-position: left ;
-  height: 30rem;
+.jumbotron {
+    padding: 10rem 0rem;
+    margin-bottom: 2rem;
+    background-size: cover;
+    background-image: url('img/undraw_medicine_b1ol.png');
+    background-repeat: repeat-y;
+    background-position: left;
+    height: 30rem;
 }
 
 @media (min-widht: 768px) {
-  .jumbotron{
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+    .jumbotron {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
 }
+
 .shadow {
     box-shadow: 0 .5rem 1.5rem rgba(22, 28, 45, .1) !important;
 }
+
 .btn-primary {
     background-color: #335eea;
     border-color: #335eea;
     box-shadow: none;
     color: #fff;
 }
+
 .btn-primary-soft {
     background-color: rgba(51, 94, 234, .1);
     color: #335eea;
 }
+
 .btn-primary-soft:hover {
     background-color: rgba(51, 94, 234, .15);
     color: #335eea;
 }
+
 .lift {
     transition: box-shadow .25s ease, transform .25s ease;
 }
+
 .lift:focus,
 .lift:hover {
     box-shadow: 0 1rem 2.5rem rgba(22, 28, 45, .1), 0 .5rem 1rem -.75rem rgba(22, 28, 45, .1) !important;
     transform: translate3d(0, -3px, 0);
+    text-decoration: none;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -96,6 +96,7 @@
     width: 10px;
     height: 10px;
 }
+
 .slides::-webkit-scrollbar-track {
     background: transparent;
 }
@@ -135,6 +136,14 @@
     color: white;
 }
 
+.cover {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 .slider>a {
     display: inline-flex;
@@ -148,4 +157,12 @@
     border-radius: 50%;
     margin: 0 0 0.5rem 0;
     position: relative;
+}
+
+.btn-card{
+    display: block;
+    background-color: transparent;
+}
+a:hover{
+    text-decoration: none;
 }
