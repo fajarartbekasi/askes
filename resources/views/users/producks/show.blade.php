@@ -19,17 +19,23 @@
                     <p>{{$produck->description}}</p>
                 </div>
                 <div class="card-footer">
-                    <form action="{{route('cart.add-item')}}" method="post">
-                        @csrf
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input type="number" name="qty" id="sst" maxlength="12" title="Quantity:" class="form-control" placeholder="Jumlah Barang">
-                            <input type="hidden" name="produck_id" value="{{ $produck->id }}" class="form-control">
-                            <p class="text-danger">Jumlah stock tersisa. {{$produck->stock}}</p>
-                        </div>
+                    @auth
+                        <form action="{{route('cart.add-item')}}" method="post">
+                            @csrf
+                            <div class="form-group mx-sm-3 mb-2">
+                                <input type="number" name="qty" id="sst" maxlength="12" title="Quantity:" class="form-control" placeholder="Jumlah Barang">
+                                <input type="hidden" name="produck_id" value="{{ $produck->id }}" class="form-control">
+                                <p class="text-danger">Jumlah stock tersisa. {{$produck->stock}}</p>
+                            </div>
+                            <div class="ml-3">
+                                <button type="submit" class="btn btn-primary mb-2">Tambah Ke keranjang</button>
+                            </div>
+                        </form>
+                    @else
                         <div class="ml-3">
-                            <button type="submit" class="btn btn-primary mb-2">Tambah Ke keranjang</button>
+                            <a href="{{route('login')}}" class="btn btn-info btn-block">Login</a>
                         </div>
-                    </form>
+                    @endauth
                 </div>
             </div>
         </div>
