@@ -23,20 +23,20 @@ class UserTableSeeder extends Seeder
 
         $this->command->info('>_ Here is your admin details to login:');
         $this->command->warn($petugas->email);
-        $this->command->warn('Password is "password"');
+        $this->command->warn('Password is "askes"');
 
         // anggota
         $anggota = factory(User::class)->create([
             'name'     => 'John Doe',
-            'email'    => 'user@perpustakaan.com',
-            'password' => bcrypt('password'),
+            'email'    => 'user@askes.com',
+            'password' => bcrypt('askes'),
         ]);
 
         $anggota->assignRole('user');
 
         $this->command->info('>_ Here is your user details to login:');
         $this->command->warn($anggota->email);
-        $this->command->warn('Password is "password"');
+        $this->command->warn('Password is "askes"');
 
         // bersihkan cache
         $this->command->call('cache:clear');
