@@ -19,7 +19,7 @@
                             <form action="{{ route('register') }}" method="post">
                                 @csrf
                                 <div class="for-group">
-                                    <input type="email" name="email" id="" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" placeholder="User name" required autofocus>
+                                    <input type="text" name="name" id="" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" placeholder="User name" required autofocus>
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('name') }}</strong>
@@ -41,6 +41,9 @@
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                                     @endif
+                                </div>
+                                <div class="form-group pt-4">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                 </div>
                                 <div class="form-group row pt-4">
                                     <div class="col-md-12">

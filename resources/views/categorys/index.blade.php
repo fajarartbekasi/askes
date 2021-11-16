@@ -33,8 +33,10 @@
                                         <td>{{$category->name}}</td>
                                         <td>{{$category->no_rak}}</td>
                                         <td>
-                                            <form action="" method="post">
-                                                <a href="http://" class="btn btn-outline-info btn-sm">Edit Category</a>
+                                            <form action="{{route('categori.destroy', $category->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('categori.edit', $category->id)}}" class="btn btn-outline-info btn-sm">Edit Category</a>
                                                 <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>

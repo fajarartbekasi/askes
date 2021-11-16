@@ -48,6 +48,7 @@ class ProdukController extends Controller
             'price'         => 'required',
         ]);
 
+       $produck->update($request->all());
         $this->storeImage($produck);
 
         return redirect()->back();
@@ -69,14 +70,26 @@ class ProdukController extends Controller
         });
     }
 
-    private function storeImage($barang){
+    private function storeImage($produck){
         if(request()->has('image')){
-            $barang->update([
+            $produck->update([
                 'image'  => request()->image->store('uploads','public'),
             ]);
 
-            $image = Image::make(public_path('storage/'. $barang->image))->fit(300,300, null, 'top-left');
+            $image = Image::make(public_path('storage/'. $produck->image))->fit(300,300, null, 'top-left');
             $image->save();
         }
+    }
+    public function destroy(Produck $produck)
+    {
+        $produck->delete();
+
+        if(\File::exists(public_path('storage/'. $produck->image)))
+        {
+            \File::delete(public_path('storage/'. $produck->image));
+        }
+
+        return redirect()->back()->with(
+                   ['success' =>'Activity berhasil di hapus']);
     }
 }

@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow">
                     <div class="card-header bg-white border-0 shadow-sm">
-                        <h4 class="fw-bold">Tambah Produk</h4>
+                        <h4 class="fw-bold">Edit Produk</h4>
                     </div>
                     <div class="card-body">
                         <form action="{{route('produk.update', $produck->id)}}" method="post" enctype="multipart/form-data">

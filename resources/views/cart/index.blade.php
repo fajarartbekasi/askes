@@ -18,6 +18,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
+                                <td>Pembeli</td>
                                 <td>Nama Produk</td>
                                 <td>Harga</td>
                                 <td>Quantity</td>
@@ -25,12 +26,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
+                            @forach($pembeliaans as $get)
+                                <tr>
+                                    <td>{{$get->sale->user->name}}</td>
+                                    <td>{{$get->produck->name}}</td>
+                                    <td>{{$get->harga}}</td>
+                                    <td>{{$get->qty}}</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

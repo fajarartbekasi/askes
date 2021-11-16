@@ -14,24 +14,32 @@
                 <div class="card border-0 shadow">
                     <div class="card-body">
                         <div>
-                            <h4 class="fw-bold">Stok Barang</h4>
+                            <h4 class="fw-bold">Data Pembelian</h4>
                         </div>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Kategori</th>
-                                    <th>Nama Produk</th>
-                                    <th>Stok</th>
-                                    <th>Option</th>
+                                    <td>Nomor Invoice</td>
+                                    <td>Nama Pembeli</td>
+                                    <td>Nama Produk</td>
+                                    <td>Harga</td>
+                                    <td>Quantity</td>
+                                    <td>Total</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Nama Categori</td>
-                                    <td>Nomor Rak</td>
-                                    <td>Pilihan</td>
-                                    <td>Pilihan</td>
-                                </tr>
+                                @foreach($pembeliaans as $get)
+                                    <tr>
+                                        <td>{{$get->sale->invoice}}</td>
+                                        <td>{{$get->sale->user->name}}</td>
+                                        <td>{{$get->produck->name}}</td>
+                                        <td>{{$get->harga}}</td>
+                                        <td>{{$get->qty}}</td>
+                                        <td>
+                                            Rp.{{ $get->sale->subtotal }}
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -20,6 +20,9 @@
                     <li class="nav-item text-secondary">
                         <a href="{{route('pembelian')}}" class="nav-link">Pembelian</a>
                     </li>
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('pembelian')}}" class="nav-link">Invite</a>
+                    </li>
                 @endrole
                 @role('user')
                     <li class="nav-item text-secondary">

@@ -35,9 +35,9 @@
                                         <td>{{$produck->name}}</td>
                                         <td>{{$produck->stock}}</td>
                                         <td>
-                                            <form action="" method="post">
+                                            <form action="{{route('produk.destroy', $produck->id)}}" method="post">
                                                 @csrf
-
+                                                @method('DELETE')
                                                 <a href="{{route('produk.edit', $produck->id)}}" class="btn btn-outline-info btn-sm">Edit Produck</a>
                                                 <button class="btn btn-outline-danger btn-sm">Delete</button>
                                             </form>

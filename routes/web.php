@@ -21,7 +21,10 @@ Route::group(['prefix' => 'categori'], function(){
     route::get('/','CategorisController@index')->name('categori');
     route::get('/ambil-form','CategorisController@create')->name('categori.ambil-form');
     route::post('/store','CategorisController@store')->name('categori.store');
-    route::get('/show-all/{category}','category\CategoryController@show')->name('producks.show-all');
+    route::get('/show-all/{category}','CategorisController@show')->name('producks.show-all');
+    route::get('/edit/{category}','CategorisController@edit')->name('categori.edit');
+    route::put('/update/{category}','CategorisController@update')->name('categori.update');
+    route::delete('/destroy/{category}','CategorisController@destroy')->name('categori.destroy');
 });
 
 Route::group(['prefix' => 'produk'], function(){
@@ -30,6 +33,7 @@ Route::group(['prefix' => 'produk'], function(){
     route::post('/store','ProdukController@store')->name('produk.store');
     route::get('/edit/{produck}','ProdukController@edit')->name('produk.edit');
     route::put('/update/{produck}','ProdukController@update')->name('produk.update');
+    route::delete('/destroy/{produck}','ProdukController@destroy')->name('produk.destroy');
 });
 
 Route::group(['prefix' => 'pembelian'], function(){
