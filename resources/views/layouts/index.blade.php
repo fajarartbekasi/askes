@@ -41,19 +41,10 @@
                 <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-semigray fw-bold" >Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-semigray fw-bold" >Tentang Kami</a>
+                            <a href="{{route('home')}}" class="nav-link text-semigray fw-bold" >Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('producks')}}" class="nav-link text-semigray fw-bold " >Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-semigray fw-bold " >Principals</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-semigray fw-bold " >Kontak</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('cart.show')}}" class="nav-link text-semigray fw-bold " >Keranjang</a>
@@ -92,6 +83,8 @@
                     @endguest
                 </div>
             </div>
+            @include('flash::message')
+            @include('layouts._errors')
             @yield('content')
         </main>
 

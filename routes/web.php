@@ -53,3 +53,12 @@ Route::group(['prefix' => 'producks'], function(){
     route::get('/','Produck\ProduckController@index')->name('producks');
     route::get('/show/{produck}','Produck\ProduckController@show')->name('producks.show');
 });
+
+Route::group(['prefix' => 'invite'], function(){
+    route::get('','InviteController@index')->name('invite');
+    route::get('create','InviteController@create')->name('invite.create');
+    route::post('store','InviteController@store')->name('invite.store');
+    route::get('edit/{user}','InviteController@edit')->name('invite.edit');
+    route::patch('update/{user}','InviteController@update')->name('invite.update');
+    route::delete('destroy/{user}','InviteController@destroy')->name('invite.destroy');
+});

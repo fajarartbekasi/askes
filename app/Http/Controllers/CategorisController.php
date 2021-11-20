@@ -28,7 +28,7 @@ class CategorisController extends Controller
             'name'  => $request->input('name'),
             'no_rak'  => $request->input('no_rak')
         ]);
-
+        flash('Kategori berhasil di tambahkan');
         return redirect()->back();
     }
     public function edit($id)
@@ -46,7 +46,7 @@ class CategorisController extends Controller
         ]);
 
         $category->update($request->all());
-
+        flash('Kategori berhasil di update');
         return redirect()->back();
 
     }
@@ -62,6 +62,7 @@ class CategorisController extends Controller
         $categorys = Category::findOrFail($id);
 
         $categorys->delete();
+        flash('Kategori telah dihapus');
         return redirect()->back();
     }
 }

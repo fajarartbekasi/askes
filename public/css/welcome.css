@@ -10963,9 +10963,8 @@ a.text-dark:focus {
   padding: 10rem 0rem;
   margin-bottom: 2rem;
   background-size: cover;
-  background-image: url(/images/undraw_medicine_b1ol.png?974eb1dcbc4dd9ccce734e0cd29399e5);
-  background-repeat: repeat-y;
-  background-position: left;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 30rem;
 }
 

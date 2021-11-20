@@ -33,7 +33,7 @@
                                         <td>{{$get->sale->invoice}}</td>
                                         <td>{{$get->sale->user->name}}</td>
                                         <td>{{$get->produck->name}}</td>
-                                        <td>{{$get->harga}}</td>
+                                        <td>{{$get->price}}</td>
                                         <td>{{$get->qty}}</td>
                                         <td>
                                             Rp.{{ $get->sale->subtotal }}

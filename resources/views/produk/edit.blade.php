@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-flex">
-                                    <button type="submit" class="btn btn-info mr-3">Simpan kategori</button>
+                                    <button type="submit" class="btn btn-info mr-3">Update produk</button>
                                     <a href="{{route('produk')}}" type="submit" class="btn btn-secondary">Cancel</a>
                                 </div>
                             </div>

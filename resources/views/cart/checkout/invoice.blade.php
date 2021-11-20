@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <img src="{{asset('images/invoice.png')}}" height="50px" alt="">
+            <img src="{{asset('images/invoice.png')}}" height="25%" alt="">
         </div>
         <div class="col-md-8">
             <div class="card border-0">

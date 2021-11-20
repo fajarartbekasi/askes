@@ -9,7 +9,6 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $categorys = Category::all();
-        return view('welcome', compact('categorys'));
+        return view('welcome');
     }
 }

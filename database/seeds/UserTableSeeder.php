@@ -14,8 +14,10 @@ class UserTableSeeder extends Seeder
     {
         // ketua
         $petugas = factory(User::class)->create([
-            'name'     => 'Taylor Otwell',
-            'email'    => 'admin@askes.com',
+            'name'     => 'Eli',
+            'email'    => 'eli@askes.com',
+            'address'  => 'Jl. Baru dimana ajah',
+            'phone'    => '84343242342',
             'password' => bcrypt('askes'),
         ]);
 
@@ -29,6 +31,8 @@ class UserTableSeeder extends Seeder
         $anggota = factory(User::class)->create([
             'name'     => 'John Doe',
             'email'    => 'user@askes.com',
+            'address'  => 'Jl. Dimana ini',
+            'phone'    => '5344542435',
             'password' => bcrypt('askes'),
         ]);
 

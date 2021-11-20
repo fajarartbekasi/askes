@@ -44,7 +44,8 @@ class CartController extends Controller
         }
 
         $cookie = cookie('askes', json_encode($carts), 2880);
-        return redirect()->back()->cookie($cookie);
+        flash('Belanjaan anda telah berhasil ditambah kedalam keranjang');
+        return redirect()->route('cart.show')->cookie($cookie);
     }
     public function listcart()
     {
@@ -101,7 +102,7 @@ class CartController extends Controller
             $carts = [];
             $cookie = cookie('askes', json_encode($carts), 2880);
             Cookie::queue(Cookie::forget('askes'));
-
+            flash('Terimakasih telah berbelanja di toko kami');
             return redirect(route('cart.selesai', $order->invoice))->cookie($cookie);
         } catch (\Exception $e) {
             DB::rollback();

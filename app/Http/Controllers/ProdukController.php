@@ -27,7 +27,7 @@ class ProdukController extends Controller
         $produck = Produck::create($this->validateRequest());
 
        $this->storeImage($produck);
-
+        flash('Produk telah ditambahkan');
         return redirect()->back();
     }
     public function edit($id)
@@ -50,7 +50,7 @@ class ProdukController extends Controller
 
        $produck->update($request->all());
         $this->storeImage($produck);
-
+        flash('Produk telah diupdate');
         return redirect()->back();
     }
      private function validateRequest(){
@@ -88,8 +88,7 @@ class ProdukController extends Controller
         {
             \File::delete(public_path('storage/'. $produck->image));
         }
-
-        return redirect()->back()->with(
-                   ['success' =>'Activity berhasil di hapus']);
+        flash('Produk telah dihapus');
+        return redirect()->back();
     }
 }

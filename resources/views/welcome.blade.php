@@ -1,92 +1,90 @@
-@extends('layouts.index')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card border-0 mb-3">
-                <div class="card-body">
-                    <h2 class="text-center">Tentang Kami</h2>
-                    <div class="text-secondary">
-                        <p class="text-center">
-                            PT. Prima Alkesindo didirikan pada tahun 1997, dan murni adalah perusahaan keluarga. Perusahaan kami berhubungan dengan produk produk kesehatan untuk rumah sakit dan laboratorium. Saat ini kami adalah sebagai Exclusive Distributor dari dua puluhan merk di dunia yang fokus pada produk produk di bidang Penyimpanan darah, Produk Disinfektant, Produk Disposable serta peralatan rumah sakit dan laboratorium.
-                        </p>
-                        <p class="text-center">
-                            visi kami adalah menyediakan layanan yang terbaik bagi para pelanggan agar menjadi perusahaan yang dihormati dalam industri kesehatan oleh sebab itu pemahaman mendalam dan pengetahuan ahli akan produk produk kami adalah keunggulan kompetitif utama kami. Kami menjaga hubungan profesional yang erat dengan para pelanggan dan dengan para dewan pegawai di Kementerian Kesehatan untuk menjamin kepuasan para pelanggan kami terhadap produk produk kami dan untuk memastikan bahwa kami selalu update dengan peraturan peraturan terkait di Kemterian Kesehatan
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card border-0 mb-3">
-                <div class="card-body">
-                    <h2 class="text-center mb-3">Produk</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card border-0">
-                                <div class="card-body shadow">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    @foreach($categorys as $category)
-                                                    <div class="col-md-4 pt-3 mb-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                            <label class="form-check-label" for="inlineCheckbox1">{{$category->name}}</label>
-                                                        </div>
-                                                    </div>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card border-0 ">
-                                <div class="card-body">
-                                    <h3 class="fw-bold">Informasi</h3>
-                                    <p class="text-secondary">
-                                        Kami menyediakan berbagai macam produk dengan beberapa macam yang telah kami sediakan untuk keperluan anda.
-                                        silahkan anda pilih kategori disamping untuk mencari produk yang anda butuhkan
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card border-0 mb-3">
-                <div class="card-body">
-                    <div class="slider mx-auto">
-                        <div class="slides">
-                            <div id="slide-1">
-                            1
-                            </div>
-                            <div id="slide-2">
-                            2
-                            </div>
-                            <div id="slide-3">
-                            3
-                            </div>
-                            <div id="slide-4">
-                            4
-                            </div>
-                            <div id="slide-5">
-                            5
-                            </div>
-                        </div>
-                        <a href="#slide-1">1</a>
-                        <a href="#slide-2">2</a>
-                        <a href="#slide-3">3</a>
-                        <a href="#slide-4">4</a>
-                        <a href="#slide-5">5</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- Styles -->
+        <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
 
-@endsection
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body stylesheet="padding-top: 3.5rem;" class="bg-white">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            <div class="container">
+                <a class="navbar-brand " href="{{ url('/') }}">
+                    <h4 class="fw-bold">{{ config('app.name', 'Laravel') }}</h4>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="{{route('home')}}" class="nav-link text-semigray fw-bold" >Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('producks')}}" class="nav-link text-semigray fw-bold " >Produk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('cart.show')}}" class="nav-link text-semigray fw-bold " >Keranjang</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main id="app" role="main" class="mb-3">
+            <div class="jumbotron" style="background-image: url('images/undraw_medicine_b1ol.png'); background-size: 100%; background-repeat: no-repeat;">
+                <div class="container">
+                    <p class="text-white">
+                        <div class="d-flex">
+                            <h1>Welcome to</h1>
+                            <h1 class="ml-2 fw-bold">{{ config('app.name', 'Laravel') }}.</h1>
+                        </div>
+                        <div>
+                            <h3>Penuhi semua kebutuhan kesehatan kamu bersama kami.</h3>
+                            <p class="text-secondary">Cepat mudah efisien dalam memenuhi semua yang anda</p>
+                        </div>
+
+                    </p>
+                    @guest
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-lg lift shadow" href="{{ route('login') }}" role="button">Login</a>
+                            @if (Route::has('register'))
+                                <a class="btn btn-primary-soft btn-lg lift ml-2" href="{{ route('register') }}" role="button">register</a>
+                            @endif
+                        </div>
+                    @else
+                        <div>
+                            <a class="btn btn-primary btn-lg lift shadow" href="#" role="button">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                        </div>
+                    @endguest
+                </div>
+            </div>
+            @yield('content')
+        </main>
+
+    </body>
+</html>
