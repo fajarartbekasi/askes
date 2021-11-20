@@ -7,7 +7,7 @@
         <div class="col-md-4">
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
-                    <img src="{{ url('storage/'. $produck->image) }}" alt="">
+                    <img src="{{ url('storage/'. $produck->image) }}" alt="" >
                 </div>
             </div>
         </div>

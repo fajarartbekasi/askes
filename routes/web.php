@@ -62,3 +62,9 @@ Route::group(['prefix' => 'invite'], function(){
     route::patch('update/{user}','InviteController@update')->name('invite.update');
     route::delete('destroy/{user}','InviteController@destroy')->name('invite.destroy');
 });
+
+Route::group(['prefix'=>'user'], function(){
+    route::get('pembelian','User\PembelianController@index')->name('user.pembelian');
+    route::get('invoice','User\InvoiceController@index')->name('user.invoice');
+    route::get('show/invoice/{sale}','User\InvoiceController@show')->name('user.show.invoice');
+});

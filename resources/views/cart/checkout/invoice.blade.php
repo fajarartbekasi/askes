@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <img src="{{asset('images/invoice.png')}}" height="25%" alt="">
+            <img src="{{asset('images/invoice.png')}}" height="25%" alt="" style="background-image: url('images/undraw_medicine_b1ol.png'); background-size: 100%; background-repeat: no-repeat;">
         </div>
         <div class="col-md-8">
             <div class="card border-0">

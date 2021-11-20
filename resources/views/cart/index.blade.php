@@ -26,7 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forach($pembeliaans as $get)
+                            @foreach($pembelians as $get)
                                 <tr>
                                     <td>{{$get->sale->user->name}}</td>
                                     <td>{{$get->produck->name}}</td>
@@ -43,7 +43,7 @@
                 <div class="card-footer bg-white border-top">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <a href="http://" class="btn btn-outline-secondary mr-3">Tambah belanjaan</a>
+                            <a href="{{route('producks')}}" class="btn btn-outline-secondary mr-3">Tambah belanjaan</a>
                             <button class="btn btn-outline-info">Proses Belanjaan</button>
                         </div>
                         <div>

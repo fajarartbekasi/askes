@@ -26,7 +26,14 @@
                                     <input type="hidden" name="user_id" class="form-control"value="{{Auth::user()->id}}" required>
                                     <p class="text-danger">{{ $errors->first('customer_name') }}</p>
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="">Alamat</label>
+                                    <input type="text" name="address" id="" value="{{Auth::user()->address}}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">phone</label>
+                                    <input type="text" name="phone" id="" value="{{Auth::user()->phone}}" class="form-control">
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <h2>Ringkasan Pesanan</h2>

@@ -10,6 +10,7 @@ use App\Cart;
 use App\Sale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -21,7 +22,10 @@ class CartController extends Controller
 
     public function index()
     {
-        return view('cart.index');
+        $pembelians = Sale::with('user')
+                            ->where('user_id', Auth::user()->id)
+                            ->latest()->paginate(6);
+        return view('cart.index', compact('pembelians'));
     }
     public function addToCart(Request $request)
     {

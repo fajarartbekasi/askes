@@ -10,6 +10,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav d-flex justify-content-bettwen ">
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('home')}}" class="nav-link">Home</a>
+                    </li>
                 @role('admin')
                     <li class="nav-item text-secondary">
                         <a href="{{route('categori')}}" class="nav-link">Kategori</a>
@@ -26,10 +29,13 @@
                 @endrole
                 @role('user')
                     <li class="nav-item text-secondary">
-                        <a href="{{route('cart')}}" class="nav-link">Cart</a>
+                        <a href="{{route('cart.show')}}" class="nav-link">Cart</a>
                     </li>
                     <li class="nav-item text-secondary">
-                        <a href="{{route('cart')}}" class="nav-link">Invoice</a>
+                        <a href="{{route('user.pembelian')}}" class="nav-link">Belanjaan</a>
+                    </li>
+                    <li class="nav-item text-secondary">
+                        <a href="{{route('user.invoice')}}" class="nav-link">Invoice</a>
                     </li>
                 @endrole
             </ul>

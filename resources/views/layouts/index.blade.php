@@ -38,7 +38,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a href="{{route('home')}}" class="nav-link text-semigray fw-bold" >Home <span class="sr-only">(current)</span></a>
@@ -54,12 +54,12 @@
             </div>
         </nav>
         <main id="app" role="main" class="mb-3">
-            <div class="jumbotron" >
+            <div class="jumbotron" style="background-image: url('images/undraw_medicine_b1ol.png'); background-size: 100%; background-repeat: no-repeat;">
                 <div class="container">
                     <p class="text-white">
                         <div class="d-flex">
                             <h1>Welcome to</h1>
-                            <h1 class="ml-2 fw-bold">{{ config('app.name', 'Laravel') }}.</h1>
+                            <h1 class="ml-2 fw-bold">{{ config('app.name', 'Laravel') }}</h1>
                         </div>
                         <div>
                             <h3>Penuhi semua kebutuhan kesehatan kamu bersama kami.</h3>
@@ -77,7 +77,7 @@
                     @else
                         <div>
                             <a class="btn btn-primary btn-lg lift shadow" href="#" role="button">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Auth::user()->name }} - {{Auth::user()->roles->implode('name',',')}} <span class="caret"></span>
                             </a>
                         </div>
                     @endguest
