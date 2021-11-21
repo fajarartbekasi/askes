@@ -68,3 +68,8 @@ Route::group(['prefix'=>'user'], function(){
     route::get('invoice','User\InvoiceController@index')->name('user.invoice');
     route::get('show/invoice/{sale}','User\InvoiceController@show')->name('user.show.invoice');
 });
+
+Route::group(['prefix'=>'laporan'], function(){
+    route::get('periode/produck','Laporan\ProduckController@periode')->name('laporan.periode.produck');
+    route::get('all/produck','Laporan\ProduckController@all')->name('laporan.all.produck');
+});
