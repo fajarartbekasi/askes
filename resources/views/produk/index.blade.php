@@ -66,6 +66,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
+                            {{$producks->links()}}
                         </table>
                     </div>
                 </div>

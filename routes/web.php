@@ -77,3 +77,7 @@ Route::group(['prefix'=>'laporan'], function(){
     route::get('periode/pembelian','Laporan\PembelianController@periode')->name('laporan.periode.pembelian');
     route::get('all/pembelian','Laporan\PembelianController@all')->name('laporan.all.pembelian');
 });
+
+Route::group(['prefix' => 'pengajuan'], function(){
+    route::get('','PengajuanController@index')->name('pengajuan');
+});

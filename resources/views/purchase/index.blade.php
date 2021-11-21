@@ -4,17 +4,16 @@
     <div class="container">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Pembelian</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Index</li>
+                <li class="breadcrumb-item"><a href="#">Data Pengajuan</a></li>
             </ol>
         </nav>
 
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow">
-                    <div class="card-header border-0 bg-white shadow-sm">
+                    <div class="card-header bg-white border-0 shadow-sm">
                         <div class="mb-2">
-                            <form action="{{route('laporan.periode.pembelian')}}" method="get">
+                            <form action="{{route('laporan.periode.produck')}}" method="get">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -37,34 +36,36 @@
                         </div>
                     </div>
                     <div class="card-body">
-
+                        <div>
+                            <h4 class="fw-bold">Daftar Produk</h4>
+                        </div>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <td>Nomor Invoice</td>
-                                    <td>Nama Pembeli</td>
-                                    <td>Nama Produk</td>
-                                    <td>Harga</td>
-                                    <td>Quantity</td>
-                                    <td>Total</td>
+                                    <th>Kategori</th>
+                                    <th>Nama Produk</th>
+                                    <th>Stok</th>
+                                    <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($pembeliaans as $get)
+                                @foreach($producks as $produck)
                                     <tr>
-                                        <td>{{$get->sale->invoice}}</td>
-                                        <td>{{$get->sale->user->name}}</td>
-                                        <td>{{$get->produck->name}}</td>
-                                        <td>{{$get->price}}</td>
-                                        <td>{{$get->qty}}</td>
+                                        <td>{{$produck->category->name}}</td>
+                                        <td>{{$produck->name}}</td>
+                                        <td>{{$produck->stock}}</td>
                                         <td>
-                                            Rp.{{ $get->sale->subtotal }}
+                                            <form action="{{route('produk.destroy', $produck->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('produk.edit', $produck->id)}}" class="btn btn-outline-info btn-sm">Edit Produck</a>
+                                                <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{$pembeliaans->links()}}
                     </div>
                 </div>
             </div>
