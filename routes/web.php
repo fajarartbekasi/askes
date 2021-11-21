@@ -72,4 +72,6 @@ Route::group(['prefix'=>'user'], function(){
 Route::group(['prefix'=>'laporan'], function(){
     route::get('periode/produck','Laporan\ProduckController@periode')->name('laporan.periode.produck');
     route::get('all/produck','Laporan\ProduckController@all')->name('laporan.all.produck');
+    route::get('periode/pembelian','Laporan\PembelianController@periode')->name('laporan.periode.pembelian');
+    route::get('all/pembelian','Laporan\PembelianController@all')->name('laporan.all.pembelian');
 });

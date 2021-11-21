@@ -12,10 +12,32 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow">
-                    <div class="card-body">
-                        <div>
-                            <h4 class="fw-bold">Data Pembelian</h4>
+                    <div class="card-header border-0 bg-white shadow-sm">
+                        <div class="mb-2">
+                            <form action="{{route('laporan.periode.pembelian')}}" method="get">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Tgl Awal</label>
+                                            <input type="date" name="tgl_awal" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Tgl Akhir</label>
+                                            <input type="date" name="tgl_akhir" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex ml-3">
+                                        <button class="btn btn-info mr-3">Cari Laporan periode</button>
+                                        <a href="{{route('laporan.all.produck')}}" class="btn btn-primary">Cetak Semua</a>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+                    </div>
+                    <div class="card-body">
+
                         <table class="table table-hover">
                             <thead>
                                 <tr>
