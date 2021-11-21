@@ -16,13 +16,29 @@
                             </h6>
                         </div>
                         <div class="pt-4">
-                            <form action="{{ route('register') }}" method="post">
+                            <form action="{{ route('user.register') }}" method="post">
                                 @csrf
                                 <div class="for-group">
                                     <input type="text" name="name" id="" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" placeholder="User name" required autofocus>
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="for-group pt-4">
+                                    <input type="text" name="address" id="" class="form-control {{ $errors->has('address') ? ' is-invalid' : '' }}" value="{{ old('address') }}" placeholder="Alamat" required autofocus>
+                                    @if ($errors->has('address'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('address') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="for-group pt-4">
+                                    <input type="text" name="phone" id="" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" value="{{ old('phone') }}" placeholder="Telphone" required autofocus>
+                                    @if ($errors->has('phone'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('phone') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -44,6 +60,7 @@
                                 </div>
                                 <div class="form-group pt-4">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                    <input type="hidden" class="form-control" name="roles" value="user" required>
                                 </div>
                                 <div class="form-group row pt-4">
                                     <div class="col-md-12">
