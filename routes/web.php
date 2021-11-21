@@ -80,4 +80,7 @@ Route::group(['prefix'=>'laporan'], function(){
 
 Route::group(['prefix' => 'pengajuan'], function(){
     route::get('','PengajuanController@index')->name('pengajuan');
+    route::get('edit/{produck}','PengajuanController@edit')->name('pengajuan.edit');
+    route::get('cetak/{produck}','PengajuanController@show')->name('pengajuan.show');
+    route::post('store','PengajuanController@store')->name('pengajuan.store');
 });

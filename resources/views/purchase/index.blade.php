@@ -11,30 +11,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow">
-                    <div class="card-header bg-white border-0 shadow-sm">
-                        <div class="mb-2">
-                            <form action="{{route('laporan.periode.produck')}}" method="get">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Tgl Awal</label>
-                                            <input type="date" name="tgl_awal" class="form-control" id="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Tgl Akhir</label>
-                                            <input type="date" name="tgl_akhir" class="form-control" id="">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex ml-3">
-                                        <button class="btn btn-info mr-3">Cari Laporan periode</button>
-                                        <a href="{{route('laporan.all.produck')}}" class="btn btn-primary">Cetak Semua</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
                     <div class="card-body">
                         <div>
                             <h4 class="fw-bold">Daftar Produk</h4>
@@ -42,25 +19,22 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Kategori</th>
-                                    <th>Nama Produk</th>
-                                    <th>Stok</th>
+                                    <th>Nama Produck</th>
+                                    <th>Quality</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($producks as $produck)
+                                @foreach($purchases as $produck)
                                     <tr>
-                                        <td>{{$produck->category->name}}</td>
                                         <td>{{$produck->name}}</td>
-                                        <td>{{$produck->stock}}</td>
+                                        <td>{{$produck->qty}}</td>
+                                        <td>Rp.{{number_format($produck->price)}}</td>
+                                        <td>Rp.{{number_format($produck->price * $produck->qty)}}</td>
                                         <td>
-                                            <form action="{{route('produk.destroy', $produck->id)}}" method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <a href="{{route('produk.edit', $produck->id)}}" class="btn btn-outline-info btn-sm">Edit Produck</a>
-                                                <button class="btn btn-outline-danger btn-sm">Delete</button>
-                                            </form>
+                                            <a href="{{route('pengajuan.show', $produck->id)}}" class="btn btn-outline-info btn-sm">Cetak Pengajuan</a>
                                         </td>
                                     </tr>
                                 @endforeach

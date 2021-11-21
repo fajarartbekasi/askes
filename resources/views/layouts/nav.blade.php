@@ -24,7 +24,7 @@
                         <a href="{{route('pembelian')}}" class="nav-link">Pembelian</a>
                     </li>
                     <li class="nav-item text-secondary">
-                        <a href="{{route('pengajuan')}}" class="nav-link">Pengajuan</a>
+                        <a href="{{route('pengajuan')}}" class="nav-link">pengajuan</a>
                     </li>
                     <li class="nav-item text-secondary">
                         <a href="{{route('invite')}}" class="nav-link">Invite</a>

@@ -28,9 +28,14 @@
                                             <input type="date" name="tgl_akhir" class="form-control" id="">
                                         </div>
                                     </div>
-                                    <div class="d-flex ml-3">
-                                        <button class="btn btn-info mr-3">Cari Laporan periode</button>
-                                        <a href="{{route('laporan.all.produck')}}" class="btn btn-primary">Cetak Semua</a>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="ml-3">
+                                            <button class="btn btn-info mr-3">Cari Laporan periode</button>
+                                            <a href="{{route('laporan.all.produck')}}" class="btn btn-primary">Cetak Semua</a>
+                                        </div>
+                                        <div class>
+                                            <a href="{{route('produk.ambil-form')}}" class="btn btn-primary ml-3">Tambah produck</a>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -60,6 +65,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <a href="{{route('produk.edit', $produck->id)}}" class="btn btn-outline-info btn-sm">Edit Produck</a>
+                                                <a href="{{route('pengajuan.edit', $produck->id)}}" class="btn btn-outline-info btn-sm">Buat Pengajuan</a>
                                                 <button class="btn btn-outline-danger btn-sm">Delete</button>
                                             </form>
                                         </td>
