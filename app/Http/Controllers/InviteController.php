@@ -34,13 +34,13 @@ class InviteController extends Controller
 
         if ($user = User::create($request->except('roles'))) {
             $user->syncRoles($request->get('roles'));
+
             flash()->success('Anggota baru berhasil ditambahkan');
         } else {
             flash()->error('Tidak dapat menambahkan pengguna baru');
         }
 
-
-        return redirect()->route('invite');
+        return redirect()->back(('invite'));
     }
     public function edit($id)
     {

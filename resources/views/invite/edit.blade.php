@@ -53,7 +53,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Password</label>
-                                    <input type="password" name="password" id="" value="{{$user->password}}" class="form-control">
+                                    <input type="password" name="password" id="" value="" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
