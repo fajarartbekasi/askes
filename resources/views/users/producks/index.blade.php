@@ -20,9 +20,9 @@
         </div>
         <div class="col-md-8">
             <div class="row">
-                <div class="col-md-4">
-                    <h3>Producks</h3>
-                    @foreach($producks as $produck)
+                @foreach($producks as $produck)
+                    <div class="col-md-4">
+                        <h3>Producks</h3>
                         <a href="{{route('producks.show', $produck->id)}}" class="btn-card lift shadow-sm">
                             <div class="card border-0" >
                                 <div class="card-header border-0 bg-white">
@@ -35,8 +35,8 @@
                                 </div>
                             </div>
                         </a>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

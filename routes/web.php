@@ -46,7 +46,7 @@ Route::group(['prefix' => 'cart'], function(){
     route::get('/show', 'CartController@listcart')->name('cart.show');
     route::get('/checkout', 'CartController@checkout')->name('cart.checkout');
     route::post('/proses', 'CartController@prosesCheckout')->name('cart.proses');
-    route::get('/selesai/{invoice}', 'CartController@checkoutSelesai')->name('cart.selesai');
+    route::get('/selesai/{cart}', 'CartController@checkoutSelesai')->name('cart.selesai');
 });
 
 Route::group(['prefix' => 'producks'], function(){

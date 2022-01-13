@@ -32,16 +32,16 @@
                                     <th>Nama</th>
                                     <th>Jumlah</th>
                                     <th>Harga</th>
-                                    <th>Subtotal</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>{{ $order->carts()->first()->produck->name }}</td>
-                                    <td>{{ $order->carts()->first()->qty }}</td>
-                                    <td>{{ $order->carts()->first()->price }}</td>
-                                    <td>{{ number_format($order->subtotal) }}</td>
-                                </tr>
+                                @foreach ($pembelian as $get )
+                                    <tr>
+                                        <td>{{ $get->produck->name }}</td>
+                                        <td>{{ $get->qty }}</td>
+                                        <td>{{ $get->price }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
