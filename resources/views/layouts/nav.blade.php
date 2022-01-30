@@ -21,7 +21,7 @@
                         <a href="{{route('produk')}}" class="nav-link">Produk</a>
                     </li>
                     <li class="nav-item text-secondary">
-                        <a href="{{route('pembelian')}}" class="nav-link">Pembelian</a>
+                        <a href="{{route('pembelian')}}" class="nav-link">Daftar Penjualan</a>
                     </li>
                     <li class="nav-item text-secondary">
                         <a href="{{route('pengajuan')}}" class="nav-link">pengajuan</a>

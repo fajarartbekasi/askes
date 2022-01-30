@@ -13,6 +13,11 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow">
                     <div class="card-header border-0 bg-white shadow-sm">
+                        <div class="alert alert-info">
+                            <h5>
+                                Laporan Penjualan
+                            </h5>
+                        </div>
                         <div class="mb-2">
                             <form action="{{route('laporan.periode.pembelian')}}" method="get">
                                 <div class="row">
