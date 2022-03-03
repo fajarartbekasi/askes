@@ -35,15 +35,15 @@
                                     </div>
                                     <div class="d-flex ml-3">
                                         <button class="btn btn-info mr-3">Cari Laporan periode</button>
-                                        <a href="{{route('laporan.all.produck')}}" class="btn btn-primary">Cetak Semua</a>
+                                        <a href="{{route('laporan.all.pembelian')}}" class="btn btn-primary">Cetak Semua</a>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="card-body">
-
-                        <table class="table table-hover">
+                        <h4>Data Penjualan</h4>
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <td>Nomor Invoice</td>
@@ -51,6 +51,7 @@
                                     <td>Nama Produk</td>
                                     <td>Harga</td>
                                     <td>Quantity</td>
+                                    <td>Tanggal</td>
                                     <td>Total</td>
                                 </tr>
                             </thead>
@@ -62,6 +63,7 @@
                                         <td>{{$get->produck->name}}</td>
                                         <td>{{$get->price}}</td>
                                         <td>{{$get->qty}}</td>
+                                        <td>{{$get->created_at->format('Y-m-d')}}</td>
                                         <td>
                                             Rp.{{ $get->sale->subtotal }}
                                         </td>

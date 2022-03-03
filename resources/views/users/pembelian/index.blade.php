@@ -7,7 +7,7 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
                     <div class="alert alert-info">
-                        <h6>Daftar transaksi yang anda lakukan</h6>
+                        <h4>Daftar transaksi yang anda lakukan</h4>
                     </div>
                     <table class="table table-striped">
                         <thead>
@@ -16,6 +16,7 @@
                                 <th>Categori</th>
                                 <th>Jumlah permintaan</th>
                                 <th>Harga</th>
+                                <th>Tanggal Pembelian</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
@@ -26,6 +27,7 @@
                                     <td>{{$sale->carts->first()->produck->category->name}}</td>
                                     <td>{{$sale->carts->first()->qty}}</td>
                                     <td>{{$sale->carts->first()->price}}</td>
+                                    <td>{{$sale->carts->first()->created_at->format('Y-m-d')}}</td>
                                     <td>{{$sale->subtotal}}</td>
                                 </tr>
                             @endforeach

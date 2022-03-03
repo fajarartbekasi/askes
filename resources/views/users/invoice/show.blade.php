@@ -24,6 +24,9 @@
                                         <th>Nomor Invoice</th>
                                         <th>Nama Produk</th>
                                         <th>Nama Kategori</th>
+                                        <th>Tanggal Belanja</th>
+                                        <th>Jumlah Barang</th>
+                                        <th>Harga</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,7 +34,9 @@
                                         <td>{{$invoice->invoice}}</td>
                                         <td>{{$invoice->carts->first()->produck->name}}</td>
                                         <td>{{$invoice->carts->first()->produck->category->name}}</td>
-
+                                        <td>{{$invoice->carts->first()->created_at->format('Y-m-d')}}</td>
+                                        <td>{{$invoice->carts->first()->qty}}</td>
+                                        <td>Rp. {{$invoice->carts->first()->price}}</td>
                                     </tr>
                                 </tbody>
                             </table>

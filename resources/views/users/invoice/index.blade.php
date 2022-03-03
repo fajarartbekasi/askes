@@ -7,6 +7,7 @@
         <div class="col-md-12">
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
+                    <h4>Daftar Invoice</h4>
                     <table class="table table-striped">
                         <thead>
                             <tr>

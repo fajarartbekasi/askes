@@ -16,7 +16,7 @@
                 </P>
         </div>
         <div class="">
-            <h4>Laporan Data Pembelian</h4>
+            <h4>Laporan Data Pejualan</h4>
         </div>
         <br>
         <table class="table table-striped">
@@ -28,6 +28,7 @@
                     <th>Nama Produk</th>
                     <th>Harga</th>
                     <th>stock</th>
+                    <th>Tanggal</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -35,11 +36,12 @@
                 @foreach($sales as $get)
                     <tr>
                         <td>{{$get->invoice}}</td>
-                        <td>{{$get->user->invoice}}</td>
+                        <td>{{$get->user->name}}</td>
                         <td>{{$get->carts->first()->produck->category->name}}</td>
                         <td>{{$get->carts->first()->produck->name}}</td>
-                        <td>{{$get->price}}</td>
-                        <td>{{$get->qty}}</td>
+                        <td>{{$get->carts->first()->price}}</td>
+                        <td>{{$get->created_at->format('Y-m-d')}}</td>
+                        <td>{{$get->carts->first()->qty}}</td>
                         <td>
                             Rp.{{ $get->subtotal }}
                         </td>

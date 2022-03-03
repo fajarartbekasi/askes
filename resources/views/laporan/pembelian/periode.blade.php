@@ -16,7 +16,7 @@
                 </P>
         </div>
         <div class="">
-            <h4>Laporan Periode Pembelian</h4>
+            <h4>Laporan Periode Pejualan</h4>
             @if (request('tgl_awal'))
             <small>Dari tanggal {{ request('tgl_awal') }} &nbsp; sampai tanggal {{ request('tgl_akhir') }}</small>
             @endif
@@ -30,7 +30,8 @@
                     <th>Kategori</th>
                     <th>Nama Produk</th>
                     <th>Harga</th>
-                    <th>stock</th>
+                    <th>Jumlah Barang</th>
+                    <th>Tanggal</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -38,11 +39,12 @@
                 @foreach($sales as $get)
                     <tr>
                         <td>{{$get->invoice}}</td>
-                        <td>{{$get->user->invoice}}</td>
+                        <td>{{$get->user->name}}</td>
                         <td>{{$get->carts->first()->produck->category->name}}</td>
                         <td>{{$get->carts->first()->produck->name}}</td>
-                        <td>{{$get->price}}</td>
-                        <td>{{$get->qty}}</td>
+                        <td>{{$get->carts->first()->price}}</td>
+                        <td>{{$get->created_at->format('Y-m-d')}}</td>
+                        <td>{{$get->carts->first()->qty}}</td>
                         <td>
                             Rp.{{ $get->subtotal }}
                         </td>

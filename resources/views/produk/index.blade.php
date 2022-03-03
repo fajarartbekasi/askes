@@ -50,12 +50,13 @@
                         <div>
                             <h4 class="fw-bold">Daftar Produk</h4>
                         </div>
-                        <table class="table table-hover">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Kategori</th>
                                     <th>Nama Produk</th>
                                     <th>Stok</th>
+                                    <th>Tanggal</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
@@ -65,6 +66,7 @@
                                         <td>{{$produck->category->name}}</td>
                                         <td>{{$produck->name}}</td>
                                         <td>{{$produck->stock}}</td>
+                                        <td>{{$produck->created_at->format('Y-m-d')}}</td>
                                         <td>
                                             <form action="{{route('produk.destroy', $produck->id)}}" method="post">
                                                 @csrf
