@@ -13,19 +13,20 @@
                         </a>
                     </div>
 
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Nama</th>
-                                <th>Email</th>
-                                <th>ALamat</th>
-                                <th>Phone</th>
-                                <th>Role</th>
-                                <th>Options</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($users as $user)
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>ALamat</th>
+                                    <th>Phone</th>
+                                    <th>Role</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($users as $user)
                                 <tr>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
@@ -43,9 +44,10 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                     {{$users->links()}}
                 </div>
             </div>
