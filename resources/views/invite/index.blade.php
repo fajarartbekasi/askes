@@ -22,6 +22,7 @@
                                     <th>ALamat</th>
                                     <th>Phone</th>
                                     <th>Role</th>
+                                    <th>Tanggal</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
@@ -32,6 +33,7 @@
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->address}}</td>
                                     <td>{{$user->phone}}</td>
+                                    <td>{{$user->created_at->format('Y-m-d')}}</td>
                                     <td>{{$user->roles->implode('name',',')}}</td>
                                     <td>
                                         <form action="{{route('invite.destroy', $user->id)}}" method="post">
