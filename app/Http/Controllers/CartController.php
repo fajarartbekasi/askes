@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Cookie;
 use Closure;
-use DB;
-use App\Produck;
 use App\Cart;
 use App\Sale;
-use Illuminate\Http\Request;
+use App\Produck;
 use Illuminate\Support\Str;
+use App\Mail\PembelianMail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
@@ -84,22 +86,25 @@ class CartController extends Controller
                 return $q['qty'] * $q['price'];
             });
 
-            $order = Sale::create([
+            $sale = Sale::create([
                 'invoice' => Str::random(4) . '-' . time(),
                 'user_id' => $request->user_id,
                 'subtotal' => $subtotal,
+                'status' => 'menunggu pembayaran',
             ]);
 
             foreach ($carts as $row) {
                 $produck = Produck::find($row['produck_id'])->decrement('stock',$row['qty']);
 
                Cart::create([
-                    'sale_id' => $order->id,
+                    'sale_id' => $sale->id,
                     'produck_id' => $row['produck_id'],
                     'price' => $row['price'],
                     'qty' => $row['qty'],
                 ]);
             }
+
+            $to = Mail::to(Auth::user()->email)->send(new PembelianMail($sale));
 
             DB::commit();
 
@@ -107,7 +112,7 @@ class CartController extends Controller
             $cookie = cookie('askes', json_encode($carts), 2880);
             Cookie::queue(Cookie::forget('askes'));
             flash('Terimakasih telah berbelanja di toko kami');
-            return redirect(route('cart.selesai', $order->id))->cookie($cookie);
+            return redirect(route('cart.selesai', $sale->id))->cookie($cookie);
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->with(['error' => $e->getMessage()]);

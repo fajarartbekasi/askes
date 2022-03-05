@@ -68,6 +68,9 @@ Route::group(['prefix'=>'user'], function(){
     route::get('invoice','User\InvoiceController@index')->name('user.invoice');
     route::get('show/invoice/{sale}','User\InvoiceController@show')->name('user.show.invoice');
 
+    route::get('ambil-form/{sale}','PembayaranController@create')->name('user.ambil-form');
+    route::post('confirm-pembayaran/{sale}','PembayaranController@store')->name('user.confirm-pembayaran');
+    route::patch('transaksi/selesai/{sale}','TransaksiController@store')->name('user.transaksi.selesai');
     route::post('register','Auth\DaftarController@store')->name('user.register');
 });
 
@@ -83,4 +86,8 @@ Route::group(['prefix' => 'pengajuan'], function(){
     route::get('edit/{produck}','PengajuanController@edit')->name('pengajuan.edit');
     route::get('cetak/{produck}','PengajuanController@show')->name('pengajuan.show');
     route::post('store','PengajuanController@store')->name('pengajuan.store');
+});
+route::group(['prefix' => 'transaksi'], function(){
+    route::get('berlangsung', 'TransaksiController@berlangsung')->name('transaksi.berlangsung');
+    route::get('selesai', 'TransaksiController@selesai')->name('transaksi.selesai');
 });

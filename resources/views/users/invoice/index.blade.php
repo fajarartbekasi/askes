@@ -24,7 +24,18 @@
                                     <td>{{$invoice->carts->first()->produck->name}}</td>
                                     <td>{{$invoice->carts->first()->produck->category->name}}</td>
                                     <td>
-                                        <a href="{{route('user.show.invoice', $invoice->id)}}" class="btn btn-info btn-sm">cek invoice</a>
+
+                                        @if($invoice->status == 'menunggu pembayaran')
+                                            <a href="{{route('user.ambil-form', $invoice->id)}}" class="btn btn-info btn-danger">Upload bukti pembayaran</a>
+                                            @elseif ($invoice->status == 'berlangsung')
+                                                <form action="{{route('user.transaksi.selesai', $invoice->id)}}" method="post">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button class="btn btn-primary btn-sm">Selesaikan Transaksi</button>
+                                                </form>
+                                            @else
+                                            <a href="{{route('user.show.invoice', $invoice->id)}}" class="btn btn-info btn-sm">cek invoice</a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

@@ -42,31 +42,38 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h4>Data Penjualan</h4>
+                        <div class="d-flex justify-content-between mb-3">
+                            <div>
+                                <h4>Data Penjualan</h4>
+                            </div>
+                            <div>
+                                <a href="{{route('transaksi.berlangsung')}}" class="btn btn-info">Transaksi Berlangsung</a>
+                                <a href="{{route('transaksi.selesai')}}" class="btn btn-success">Transaksi Selesai</a>
+                            </div>
+                        </div>
+
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Nomor Invoice</td>
-                                    <td>Nama Pembeli</td>
-                                    <td>Nama Produk</td>
-                                    <td>Harga</td>
-                                    <td>Quantity</td>
-                                    <td>Tanggal</td>
-                                    <td>Total</td>
+                                    <th>Invoice</th>
+                                    <th>Nama Produk</th>
+                                    <th>Harga</th>
+                                    <th>Jumlah</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($pembeliaans as $get)
                                     <tr>
-                                        <td>{{$get->sale->invoice}}</td>
-                                        <td>{{$get->sale->user->name}}</td>
-                                        <td>{{$get->produck->name}}</td>
-                                        <td>{{$get->price}}</td>
-                                        <td>{{$get->qty}}</td>
-                                        <td>{{$get->created_at->format('Y-m-d')}}</td>
+                                        <td>{{$get->invoice}}</td>
+                                        <td>{{$get->user->name}}</td>
+                                        <td>Rp. {{number_format($get->carts->first()->price)}}</td>
+                                        <td>{{$get->carts->first()->qty}}</td>
                                         <td>
-                                            Rp.{{ $get->sale->subtotal }}
+                                            <span class="badge badge-warning">{{$get->status}}</span>
                                         </td>
+                                        <td>{{$get->created_at->format('Y-m-d')}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
