@@ -111,7 +111,7 @@ class CartController extends Controller
             $carts = [];
             $cookie = cookie('askes', json_encode($carts), 2880);
             Cookie::queue(Cookie::forget('askes'));
-            flash('Terimakasih telah berbelanja di toko kami');
+            flash('Terimakasih Silahkan periksa email anda untuk melakukan upload pembayaran');
             return redirect(route('cart.selesai', $sale->id))->cookie($cookie);
         } catch (\Exception $e) {
             DB::rollback();
